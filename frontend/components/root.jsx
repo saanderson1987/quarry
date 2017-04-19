@@ -4,25 +4,26 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import App from './app';
 import SessionFormContainer from './session_form/session_form_container';
 import test from './test';
+
+
 const Root = ({ store }) => {
 
-  // const _ensureLoggedIn = (nextState, replace) => {
-  //   const currentUser = store.getState().session.currentUser;
-  //   if (!currentUser) {
-  //     replace('/login');
-  //   }
-  // };
-  //
-  // const _redirectIfLoggedIn = (nextState, replace) => {
-  //   const currentUser = store.getState().session.currentUser;
-  //   if (currentUser) {
-  //     replace('/');
-  //   }
-  // };
+  const _ensureLoggedIn = (nextState, replace) => {
+    const currentUser = store.getState().session.currentUser;
+    if (!currentUser) {
+      replace('/login');
+    }
+  };
 
-  // onEnter={_redirectIfLoggedIn}
-// onEnter={_redirectIfLoggedIn}
+  const _redirectIfLoggedIn = (nextState, replace) => {
+    const currentUser = store.getState().session.currentUser;
+    if (currentUser) {
+      replace('/');
+    }
+  };
 
+
+  // debugger
   return (
     <Provider store={store}>
       <Router history={hashHistory}>
@@ -31,12 +32,12 @@ const Root = ({ store }) => {
           <Route
             path="/login"
             component={SessionFormContainer}
-
+            onEnter={_redirectIfLoggedIn}
           />
           <Route
             path="/signup"
             component={SessionFormContainer}
-
+            onEnter={_redirectIfLoggedIn}
           />
         </Route>
       </Router>

@@ -5,6 +5,7 @@ import configureStore from './store/store';
 import Root from './components/root';
 
 
+
 document.addEventListener('DOMContentLoaded', () => {
   let store;
   if (window.currentUser) {
