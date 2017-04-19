@@ -40,10 +40,7 @@ const Root = ({ store }) => {
             component={SessionFormContainer}
             onEnter={_redirectIfLoggedIn}
           />
-          <Route path="/session" component={SessionFormContainer1}>
-            <Route path="/session/signup" component={Signup} />
-          </Route>
-
+        <Route path="/session" component={SessionFormContainer1}/>
         </Route>
       </Router>
     </Provider>

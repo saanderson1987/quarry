@@ -5,7 +5,7 @@ import GreetingContainer from './greeting/greeting_container';
 const App = ({ children }) => (
   <div>
     <header>
-      <GreetingContainer />
+      <GreetingContainer/>
     </header>
     {children}
   </div>

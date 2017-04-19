@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
+import Signup from './signup';
 
 class SessionForm1 extends React.Component {
 
@@ -8,6 +9,16 @@ class SessionForm1 extends React.Component {
     this.state = { username: "", password: "" };
 		this.submitLogin = this.submitLogin.bind(this);
   }
+
+  componentDidUpdate() {
+		this.redirectIfLoggedIn();
+	}
+
+	redirectIfLoggedIn() {
+		if (this.props.loggedIn) {
+			this.props.router.push("/");
+		}
+	}
 
   submitLogin(e) {
 		e.preventDefault();
@@ -22,6 +33,7 @@ class SessionForm1 extends React.Component {
 	}
 
   renderErrors() {
+
 		return(
 			<ul>
 				{this.props.errors.map((error, i) => (
@@ -36,32 +48,30 @@ class SessionForm1 extends React.Component {
   render() {
     return(
 
-      <div>
-        <div>
-          <Link to='/session/signup'>Sign up</Link>
-        </div>
+      <div className="session-form-box">
+        <h1>Quarry</h1>
+        <h2>A place to share knowledge and better understand the world</h2>
+       <Signup signup={this.props.signup}/>
+       <form onSubmit={this.submitLogin} >
+         <p>Login</p>
+         <label> Username:
+           <input type="text"
+             value={this.state.username}
+             onChange={this.update("username")}
+             className="session-input" />
+         </label>
+         <br/>
+         <label> Password:
+           <input type="password"
+             value={this.state.password}
+             onChange={this.update("password")}
+             className="session-input" />
+         </label>
+         <br/>
+         <input type="submit" value="Login" />
 
-        <div>
-           <form onSubmit={this.submitLogin} className="login-form-box">
-             <h3>Login</h3>
-             <label> Username:
-               <input type="text"
-                 value={this.state.username}
-                 onChange={this.update("username")}
-                 className="login-input" />
-             </label>
-             <br/>
-             <label> Password:
-               <input type="password"
-                 value={this.state.password}
-                 onChange={this.update("password")}
-                 className="login-input" />
-             </label>
-             <br/>
-             <input type="submit" value="Login" />
-             {this.renderErrors()}
-           </form>
-        </div>
+       </form>
+       {this.renderErrors()}
       </div>
 
     );
