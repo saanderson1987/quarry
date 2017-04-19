@@ -5,9 +5,6 @@ import GreetingContainer from './greeting/greeting_container';
 const App = ({ children }) => (
   <div>
     <header>
-      <Link to="/" className="header-link">
-        <h1>Bench BnB</h1>
-      </Link>
       <GreetingContainer />
     </header>
     {children}
