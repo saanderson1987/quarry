@@ -1,0 +1,24 @@
+    ## Implementation
+
+DONE    ### Phase 1: Backend setup and Front End User Authentication (2 days)
+
+    **Objective:** Functioning rails project with front-end authentication
+
+    --Need to change username to e-mail
+    --Need to update errors font 
+
+    ### Phase 2: Questions (2 days)
+
+    **Objective:** Questions can be created, read, edited and destroyed through the API
+
+    ### Phase 3: Answers/comments on answers (2 days)
+
+    **Objective:** Questions have many answers which in turn have many comments.
+
+    ### Phase 4: Search questions (1 day)
+
+    **Objective:** Questions can be searched for
+
+    ### Phase 5: Topics/Tags (1 day)
+
+    **Objective:** Questions can be tagged with multiple tags
