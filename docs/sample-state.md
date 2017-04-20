@@ -10,8 +10,9 @@
 
   questions: {
     1: {
-      question: "Is this a question?""
-      details: "This is my first question.""
+      id: 1,
+      question: "Is this a question?",
+      details: "This is my first question.",
       author_id: 1,
       topics: {
         1: {

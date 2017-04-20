@@ -5,7 +5,8 @@ DONE    ### Phase 1: Backend setup and Front End User Authentication (2 days)
     **Objective:** Functioning rails project with front-end authentication
 
     --Need to change username to e-mail
-    --Need to update errors font 
+    --Need to update errors font
+    --Need to use PLACEHOLDER in input fields instead of labels
 
     ### Phase 2: Questions (2 days)
 

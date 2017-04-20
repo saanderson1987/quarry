@@ -6,6 +6,7 @@ import SessionFormContainer from './session_form/session_form_container';
 import test from './test';
 import SessionFormContainer1 from './session_form1/session_form_container1';
 import Signup from './session_form1/signup';
+import QuestionIndexContainer from './questions/question_index_container';
 
 const Root = ({ store }) => {
 
@@ -28,18 +29,16 @@ const Root = ({ store }) => {
     <Provider store={store}>
       <Router history={hashHistory}>
         <Route path="/" component={App}>
-          <IndexRoute component={test} onEnter={_ensureLoggedIn}/>
-          <Route
-            path="/login"
-            component={SessionFormContainer}
-            onEnter={_redirectIfLoggedIn}
-          />
-          <Route
-            path="/signup"
-            component={SessionFormContainer}
-            onEnter={_redirectIfLoggedIn}
-          />
-        <Route path="/session" component={SessionFormContainer1}/>
+              <IndexRoute component={QuestionIndexContainer} onEnter={_ensureLoggedIn}/>
+              <Route
+                path="/login"
+                component={SessionFormContainer}
+                onEnter={_redirectIfLoggedIn} />
+              <Route
+                path="/signup"
+                component={SessionFormContainer}
+                onEnter={_redirectIfLoggedIn} />
+              <Route path="/session" component={SessionFormContainer1}/>
         </Route>
       </Router>
     </Provider>
