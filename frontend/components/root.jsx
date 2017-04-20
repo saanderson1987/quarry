@@ -24,7 +24,6 @@ const Root = ({ store }) => {
   };
 
 
-  // debugger
   return (
     <Provider store={store}>
       <Router history={hashHistory}>

@@ -1,15 +1,112 @@
-.session-form-box h2 {
-  font-family: Georgia,Times,"Times New Roman",serif;
-  font-size: 19px;
-  font-weight: 400;
-  color: #999;
-  text-align: center;
+.background {
+  background-image: url("http://images2.fanpop.com/image/photos/13700000/Whare-s-Waldo-wheres-waldo-13776537-1024-768.jpg");
+  // background-color: #AA2200;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+
+}
+
+.session-form-box {
+  width: 580px;
+  position: absolute;
+  // border: 3px solid #e2e2e2;
+  border: 2px solid #999;
+  border-radius: 4px;
+  display: block;
+  left: 0;
+  right: 0;
+  padding: 25px 35px;
+  margin: auto;
+  top: 10%;
+  overflow-y: hidden;
+  background: #fff;
 }
 
 .session-form-box h1 {
   font-family: Georgia,Times,"Times New Roman",serif;
-  font-size: 60px;
-  font-weight: 800;
+  font-size: 75px;
+  font-weight: 900;
   color: #AA2200;
   text-align: center;
+  margin: 2px;
+}
+.session-form-box h2 {
+  font-family: Georgia,Times,"Times New Roman",serif;
+  font-size: 21px;
+  font-weight: 500;
+  color: #999;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 66px;
+}
+
+.session-form {
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  color: gray;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.session-form h3 {
+  font-weight: bold;
+  font-size: 13px;
+}
+
+
+.signupLink {
+  color: #3e78ad;
+}
+
+.signupLink:hover {
+  text-decoration: underline;
+}
+
+.session-submit {
+  background-color: #3e78ad;
+  color: #fff;
+  border: 1px solid #3a66ad;
+  padding: 5px 7px 6px;
+  font-size: 15px;
+  border-radius: 3px;
+  float: right;
+}
+
+.session-input {
+  // background: #fff;
+  background-color: #EEE;
+  border: 1px solid #e2e2e2;
+  border-radius: 3px;
+  padding: 6px 8px;
+  color: #333;
+  font-size: 15px;
+}
+
+
+input[type=text] {
+  margin-bottom: 24px;
+  width: 240px;
+}
+
+input[type=password] {
+  margin-bottom: 10px;
+  width: 240px;
+}
+
+.form-left {
+  padding-right: 30px;
+  // border-right: 1px solid #EEE;
+  width: 50%;
+  box-sizing: border-box;
+}
+
+.form-right {
+  border-left: 1px solid #EEE;
+  padding-left: 30px;
+  width: 50%;
+  box-sizing: border-box;
 }

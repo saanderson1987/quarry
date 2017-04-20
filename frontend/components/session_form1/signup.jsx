@@ -15,7 +15,12 @@ class Signup extends React.Component {
   }
 
   signupLink() {
-    return <button onClick={this.updateSignupClicked(true)}>Signup</button>;
+    return (
+      <div >
+      <h3 className="signupLink" onClick={this.updateSignupClicked(true)}>Signup</h3>
+      <p>By signing up you indicate that you have read and agree to the Terms of Service and Privacy Policy.</p>
+      </div>
+    );
   }
 
   submitSignup(e) {
@@ -47,30 +52,31 @@ class Signup extends React.Component {
 
     if (this.state.signupClicked === false) {
       return (
-        <div>{this.signupLink()}</div>
+        <div className="form-left">{this.signupLink()}</div>
       );
     } else {
       return(
-        <form onSubmit={this.submitSignup} >
-          <p>Sign Up</p>
-          <label> Username:
-            <input type="text"
-              value={this.state.creds.username}
-              onChange={this.update("username")}
-              className="session-input" />
-          </label>
-          <br/>
-          <label> Password:
-            <input type="password"
-              value={this.state.creds.password}
-              onChange={this.update("password")}
-              className="session-input" />
-          </label>
-          <br/>
-          <input type="submit" value="Sign Up" />
+        <div className="form-left">
+          <form onSubmit={this.submitSignup} >
+            <h3>Sign Up</h3>
+            <label> Username:
+              <input type="text"
+                value={this.state.creds.username}
+                onChange={this.update("username")}
+                className="session-input" />
+            </label>
+            <br/>
+            <label> Password:
+              <input type="password"
+                value={this.state.creds.password}
+                onChange={this.update("password")}
+                className="session-input" />
+            </label>
+            <br/>
+            <input type="submit" value="Sign Up" className="session-submit"/>
 
-        </form>
-
+          </form>
+        </div>
 
       );
     }

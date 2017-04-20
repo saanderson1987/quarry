@@ -47,33 +47,37 @@ class SessionForm1 extends React.Component {
 
   render() {
     return(
-
-      <div className="session-form-box">
-        <h1>Quarry</h1>
-        <h2>A place to share knowledge and better understand the world</h2>
-       <Signup signup={this.props.signup}/>
-       <form onSubmit={this.submitLogin} >
-         <p>Login</p>
-         <label> Username:
-           <input type="text"
-             value={this.state.username}
-             onChange={this.update("username")}
-             className="session-input" />
-         </label>
-         <br/>
-         <label> Password:
-           <input type="password"
-             value={this.state.password}
-             onChange={this.update("password")}
-             className="session-input" />
-         </label>
-         <br/>
-         <input type="submit" value="Login" />
-
-       </form>
-       {this.renderErrors()}
+      <div>
+        <div className="background"></div>
+        <div className="session-form-box" >
+          <h1>Quarry</h1>
+          <h2>A place to share knowledge and better understand the world</h2>
+          <div className="session-form">
+            <Signup signup={this.props.signup}>Sign</Signup>
+            <div className="form-right">
+              <form onSubmit={this.submitLogin} >
+                <h3>Login</h3>
+                <label> Username:
+                  <input type="text"
+                    value={this.state.username}
+                    onChange={this.update("username")}
+                    className="session-input" />
+                </label>
+                <br/>
+                <label> Password:
+                  <input type="password"
+                    value={this.state.password}
+                    onChange={this.update("password")}
+                    className="session-input" />
+                </label>
+                <br/>
+                <input type="submit" value="Login" className="session-submit"/>
+              </form>
+            </div>
+          </div>
+         {this.renderErrors()}
+        </div>
       </div>
-
     );
   }
 
