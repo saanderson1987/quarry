@@ -28,7 +28,6 @@ class NewQuestion extends React.Component {
       );
       this.setState(newState);
     };
-
   }
 
   submitNewQuestion(e) {
@@ -40,8 +39,10 @@ class NewQuestion extends React.Component {
   render() {
     if (this.state.newQuestionClicked === false) {
       return (
-        <span className="newQuestionLink" onClick={this.updateNewQuestionClicked(true)}>
-          What is your question? (click me)
+        <span
+          className="newQuestionLink"
+          onClick={this.updateNewQuestionClicked(true)}>
+            What is your question? (click me)
         </span>
       );
     } else {
@@ -59,10 +60,7 @@ class NewQuestion extends React.Component {
         </div>
       );
     }
-
-
   }
-
 }
 
 

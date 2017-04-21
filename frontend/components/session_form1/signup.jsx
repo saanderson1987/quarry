@@ -6,12 +6,12 @@ import merge from 'lodash/merge';
 class Signup extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {creds: { username: "", password: "" }, signupClicked: false};
+    this.state = { creds: { username: "", password: "" }, signupClicked: false};
     this.submitSignup = this.submitSignup.bind(this);
   }
 
   updateSignupClicked(boolean) {
-    return e => this.setState({signupClicked: boolean});
+    return e => this.setState({ signupClicked: boolean });
   }
 
   signupLink() {

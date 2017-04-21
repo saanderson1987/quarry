@@ -29,23 +29,13 @@ const Root = ({ store }) => {
   return (
     <Provider store={store}>
       <Router history={hashHistory}>
-        <Route path="/" component={App}>
-          <IndexRoute
-            component={QuestionIndexContainer}
-            onEnter={_ensureLoggedIn}/>
-          <Route
-            path="/login"
-            component={SessionFormContainer}
-            onEnter={_redirectIfLoggedIn} />
-          <Route
-            path="/signup"
-            component={SessionFormContainer}
-            onEnter={_redirectIfLoggedIn} />
-          <Route path="/session" component={SessionFormContainer1}/>
+        <Route path="/" component={App} onEnter={_ensureLoggedIn}>
+          <IndexRoute component={QuestionIndexContainer} />
           <Route
             path="/questions/:questionId"
             component={QuestionShowContainer} />
         </Route>
+        <Route path="/session" component={SessionFormContainer1} onEnter={_redirectIfLoggedIn}/>
       </Router>
     </Provider>
   );

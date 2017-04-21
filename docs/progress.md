@@ -8,6 +8,7 @@ DONE    ### Phase 1: Backend setup and Front End User Authentication (2 days)
     --Need to update errors font
     --Need to use PLACEHOLDER in input fields instead of labels
 
+    --Might need to ensure that you can go to path with '#'
     ### Phase 2: Questions (2 days)
 
     **Objective:** Questions can be created, read, edited and destroyed through the API
