@@ -44,7 +44,7 @@ group :development, :test do
   gem 'annotate'
   # The gems below are for live re-load so you can see style changes in
   # browser as soon as you make them.
-  # Run bundle exec guard = P livereload to access.
+  # Run bundle exec guard -P livereload to access.
   gem 'guard', require: false
   gem 'guard-livereload', require: false
   gem 'rack-livereload'

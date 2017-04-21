@@ -5,13 +5,13 @@ const QuestionIndexItem = ({ question }) => {
   return (
     <li>
       <h3>{question.question}</h3>
-      <div class="Answer">
-        <div class="AnswerAuthorHeader">
-          <img class="UserPhoto"></img>
+      <div className="Answer">
+        <div className="AnswerAuthorHeader">
+          <img className="UserPhoto"></img>
           <div>question.answer.author.username</div>
         </div>
         <div>question.answer.text</div>
-        <div class="Comments"></div>
+        <div className="Comments"></div>
       </div>
   </li>
   );

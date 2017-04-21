@@ -1,0 +1,16 @@
+Example state:
+
+{
+  questions: {
+    1:
+  },
+
+  session: {
+    currentUser: {
+      id: 1,
+      username: "user1"
+    }
+  }
+
+
+}

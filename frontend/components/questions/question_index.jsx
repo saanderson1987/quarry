@@ -1,5 +1,6 @@
 import React from 'react';
 import QuestionIndexItem from './question_index_item';
+import NewQuestion from './new_question';
 
 class QuestionIndex extends React.Component {
 
@@ -26,13 +27,28 @@ class QuestionIndex extends React.Component {
     ));
 
     return (
-      <nav></nav>
-      <div class="Feeds"></div>
-      <div class="QuestionIndex">
-        <div className="CreateQuestion"></div>
-        <ul>
-          {questions}
-        </ul>
+      <div>
+
+        <nav></nav>
+
+        <div className="Feeds"></div>
+
+        <div className="QuestionIndex">
+
+          <div className="CreateQuestion">
+            <img className="UserPhoto"></img>
+            <span>{this.props.currentUser.username}</span>
+            <NewQuestion
+              createQuestion={this.props.createQuestion}
+              currentUser={this.props.currentUser} />
+          </div>
+
+          <ul>
+            {questions}
+          </ul>
+
+        </div>
+
       </div>
     );
   }
