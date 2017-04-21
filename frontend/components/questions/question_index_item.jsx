@@ -4,14 +4,17 @@ import { Link, hashHistory } from 'react-router';
 const QuestionIndexItem = ({ question }) => {
   return (
     <li>
-      <h3>{question.question}</h3>
+      <span>topics</span>
+      <Link to={`/questions/${question.id}`}>
+        <h3>{question.question}</h3>
+      </Link>
       <div className="Answer">
         <div className="AnswerAuthorHeader">
           <img className="UserPhoto"></img>
-          <div>question.answer.author.username</div>
+          <div>Random Answer Username</div>
         </div>
-        <div>question.answer.text</div>
-        <div className="Comments"></div>
+        <div className="AnswerText">Random Answer Text</div>
+        <div className="Comments"> Random Answer Comments</div>
       </div>
   </li>
   );
@@ -19,5 +22,5 @@ const QuestionIndexItem = ({ question }) => {
 
 export default QuestionIndexItem;
 
-// need answer db migration and relations
+// need answer db migration and relations -- question.answers
   //

@@ -6,6 +6,7 @@ class NewQuestion extends React.Component {
 
   constructor(props) {
     super(props);
+    this.submitNewQuestion = this.submitNewQuestion.bind(this);
     this.state = {
       newQuestionClicked: false,
       question: {
@@ -25,7 +26,9 @@ class NewQuestion extends React.Component {
       let newState = merge( {}, this.state,
         { question: { question: e.target.value } }
       );
+      this.setState(newState);
     };
+
   }
 
   submitNewQuestion(e) {
@@ -37,8 +40,8 @@ class NewQuestion extends React.Component {
   render() {
     if (this.state.newQuestionClicked === false) {
       return (
-        <span class="newQuestionLink" onClick={this.updateNewQuestionClicked(true)}>
-          What is your question?
+        <span className="newQuestionLink" onClick={this.updateNewQuestionClicked(true)}>
+          What is your question? (click me)
         </span>
       );
     } else {

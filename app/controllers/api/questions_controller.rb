@@ -13,7 +13,7 @@ class Api::QuestionsController < ApplicationController
     if @question.save
       render :show
     else
-      render json: @post.erros.full_messages, status: 422
+      render json: @question.errors.full_messages, status: 422
     end
 
   end
@@ -30,12 +30,12 @@ class Api::QuestionsController < ApplicationController
   end
 
   def destroy
-    @question = Post.find(params[:id])
+    @question = Question.find(params[:id])
 
-    if @post.destroy
+    if @question.destroy
       render :show
     else
-      render json: @post.errors.full_messages, status: 422
+      render json: @question.errors.full_messages, status: 422
     end
 
   end
