@@ -36,6 +36,8 @@ nav {
   font-size: 15px;
   font-family: Helvetica,Arial,sans-serif;
   font-weight: lighter;
+  width: 266px;
+
 }
 
 .NavAskQuestionButton {
@@ -52,12 +54,12 @@ nav {
   color: #999;
   font-weight: bold;
   display: flex;
-  // padding: 13px 0;
+  justify-content: space-between;
+  padding: 13px 0;
 }
 
-.NavMiddle li {
-  // padding: 13px 0px 13px 0px;
-
+.NavMiddle a {
+  padding: 0px 20px;
 }
 
 .NavEnd {
@@ -92,7 +94,7 @@ nav {
 
 .UserMenu {
   position: absolute;
-  top: 60px;
+  top: 55px;
   border: 1px solid #e2e2e2;
   border-radius: 3px;
 

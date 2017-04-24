@@ -73,7 +73,7 @@ class Greeting extends React.Component {
   }
 
   render() {
-    if (currentUser) {
+    if (this.props.currentUser) {
       return this.personalGreeting();
     } else {
       return <div></div>;

@@ -26,12 +26,23 @@ class QuestionIndex extends React.Component {
       <QuestionIndexItem key={question.id} question={question} />
     ));
 
+    if (this.props.currentUser === null) {
+      return <div></div>;
+    }
+
     return (
-      <div>
-        <div className="Feeds"></div>
+      <div className="QuestionIndex">
+        <div className="QuestionIndexFeeds">
+          <h3>Feeds</h3>
+          <ul>
+            <li>Top Stories</li>
+            <li>New Questions</li>
+          </ul>
+        </div>
 
-        <div className="QuestionIndex">
 
+        <div className="QuestionIndexMain">
+          <h1>Top Stories For You</h1>
           <div className="CreateQuestion">
             <img className="UserPhoto"></img>
             <span>{this.props.currentUser.username}</span>
