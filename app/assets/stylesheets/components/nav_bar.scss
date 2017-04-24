@@ -1,12 +1,19 @@
 
+.NavBar {
+  border-bottom: 1px solid #ccc;
+  border-top: 2px solid #AA2200;
+  // padding: 7px 0px;
+}
 
 nav {
-  border-top: 2px solid #AA2200;
-  padding: 7px 0px;
   display: flex;
-  border-bottom: 1px solid #ccc;
   width: 900px;
   margin: auto;
+  justify-content: space-between;
+}
+
+.NavBegin {
+  display: flex;
 }
 
 .HomeLink {
@@ -15,18 +22,20 @@ nav {
   font: Georgia, Times, serif;
   font-size: 28px;
   font-weight: bold;
+  padding: 7px 0px;
 
 }
 
 .AskOrSearch {
-  background-color: #EEE;
+  background-color: #f4f4f4;
   border: 1px solid #e2e2e2;
   border-radius: 3px;
   padding: 4px 8px;
-  margin: 2px 0px 0px 20px;
+  margin: 9px 0px 0px 20px;
   color: #333;
   font-size: 15px;
   font-family: Helvetica,Arial,sans-serif;
+  font-weight: lighter;
 }
 
 .NavAskQuestionButton {
@@ -34,9 +43,84 @@ nav {
   font-family: Helvetica,Arial,sans-serif;
   border: 1px solid #ccc;
   padding: 6px 8px 4px 8px;
-  color: #aaa;
+  color: #585a61;
+}
+
+.NavMiddle {
+  font-size: 14px;
+  font-family: Helvetica,Arial,sans-serif;
+  color: #999;
+  font-weight: bold;
+  display: flex;
+  // padding: 13px 0;
+}
+
+.NavMiddle li {
+  // padding: 13px 0px 13px 0px;
+
 }
 
 .NavEnd {
-  align-self: flex-end;
+  display: flex;
+  align-items: center;
+  font-family: Helvetica,Arial,sans-serif;
+  padding: 0px 13px 0px 13px;
+  position: relative;
+}
+
+.NavEnd:hover {
+  background-color: #f4f4f4;
+
+}
+
+.NavUserName {
+  font-size: 14px;
+  font-weight: bold;
+  color: #999;
+
+  padding-left: 10px;
+}
+
+
+
+.NavUserPhoto {
+  height: 22px;
+  width: 22px;
+  border: 0;
+  border-radius: 50%;
+}
+
+.UserMenu {
+  position: absolute;
+  top: 60px;
+  border: 1px solid #e2e2e2;
+  border-radius: 3px;
+
+  width: 186px;
+  right: 0;
+}
+
+.UserMenuMain {
+  font-size: 14px;
+  color: #2b6dad;
+  background-color: #f6f6f6;
+}
+
+.UserMenuMain li {
+  padding: 8px 16px;
+  border-bottom: 1px solid #e2e2e2;
+
+}
+
+.UserMenuSub {
+  font-size: 12px;
+  background-color: #eee;
+  color: #999;
+  padding: 4px 16px;
+}
+
+.UserMenuSub li:first-of-type {
+  margin-bottom: 4px;
+  border-bottom: 1px solid #e2e2e2;
+  padding-bottom: 4px;
 }

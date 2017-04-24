@@ -1,1 +1,5 @@
 <img className="UserPhoto"></img>
+
+<button className="header-button" onClick={logout}>
+  Log Out
+</button>
