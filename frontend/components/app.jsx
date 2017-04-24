@@ -6,7 +6,7 @@ import NavBarContainer from './navbar/nav_bar_container';
 const App = ({ children }) => (
   <div>
     <header>
-      <NavBarContainer/>
+      <GreetingContainer />
     </header>
     {children}
   </div>

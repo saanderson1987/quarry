@@ -1,0 +1,42 @@
+
+
+nav {
+  border-top: 2px solid #AA2200;
+  padding: 7px 0px;
+  display: flex;
+  border-bottom: 1px solid #ccc;
+  width: 900px;
+  margin: auto;
+}
+
+.HomeLink {
+  color: #AA2200;
+  text-decoration: none;
+  font: Georgia, Times, serif;
+  font-size: 28px;
+  font-weight: bold;
+
+}
+
+.AskOrSearch {
+  background-color: #EEE;
+  border: 1px solid #e2e2e2;
+  border-radius: 3px;
+  padding: 4px 8px;
+  margin: 2px 0px 0px 20px;
+  color: #333;
+  font-size: 15px;
+  font-family: Helvetica,Arial,sans-serif;
+}
+
+.NavAskQuestionButton {
+  font-size: 13px;
+  font-family: Helvetica,Arial,sans-serif;
+  border: 1px solid #ccc;
+  padding: 6px 8px 4px 8px;
+  color: #aaa;
+}
+
+.NavEnd {
+  align-self: flex-end;
+}

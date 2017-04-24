@@ -28,9 +28,6 @@ class QuestionIndex extends React.Component {
 
     return (
       <div>
-
-        <nav></nav>
-
         <div className="Feeds"></div>
 
         <div className="QuestionIndex">
