@@ -43,25 +43,33 @@ nav {
 .NavAskQuestionButton {
   font-size: 13px;
   font-family: Helvetica,Arial,sans-serif;
-  border: 1px solid #ccc;
+  border: 1px solid #ced1e1;
   padding: 6px 8px 4px 8px;
   color: #585a61;
+}
+
+.NavAskQuestionButton:hover {
+  border: 1px solid #333;
 }
 
 .NavMiddle {
   font-size: 14px;
   font-family: Helvetica,Arial,sans-serif;
   color: #999;
-  font-weight: bold;
+  // font-weight: bold;
   display: flex;
   justify-content: space-between;
-  padding: 13px 0;
+  // padding: 15px 0;
 }
 
 .NavMiddle a {
-  padding: 0px 20px;
+  padding: 15px 20px;
 }
 
+.NavMiddle a:hover {
+  background-color: #f4f4f4;
+
+}
 .NavEnd {
   display: flex;
   align-items: center;
@@ -72,12 +80,11 @@ nav {
 
 .NavEnd:hover {
   background-color: #f4f4f4;
-
 }
 
 .NavUserName {
   font-size: 14px;
-  font-weight: bold;
+  // font-weight: bold;
   color: #999;
 
   padding-left: 10px;

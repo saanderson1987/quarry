@@ -1,0 +1,69 @@
+.QuestionIndex {
+  width: 900px;
+  margin: auto;
+  display: flex;
+}
+
+.QuestionIndexFeeds {
+  font-family: Helvetica, Arial, sans-serif;
+  padding-top: 35px;
+  width: 142px;
+}
+
+.QuestionIndexFeeds h3 {
+  font-size: 15px;
+  color: #333;
+  padding-bottom: 8px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.QuestionIndexFeeds ul {
+  padding-top: 5px;
+  font-size: 13px;
+}
+
+.QuestionIndexFeeds li {
+  padding: 5px;
+  color: #666;
+}
+
+.QuestionIndexFeeds li:first-of-type {
+  background-color: #ececec;
+  border-radius: 3px;
+}
+
+.QuestionIndexMain {
+  width: 572px;
+  margin-left: 30px;
+  padding-top: 35px;
+
+}
+
+.QuestionIndexMainHeader {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  color: #333;
+  border-bottom: 1px solid #e2e2e2;
+  padding-bottom: 8px;
+}
+
+.QuestionIndexFormNew {
+  margin-top: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.QuestionIndexUserPhoto {
+  width: 18px;
+  height: 18px;
+  margin-right: 4px;
+  border-radius: 50%;
+}
+
+.QuestionIndexUserName {
+  font-family: Helvetica, Arial, sans-serif;
+  color: #999;
+  font-size: 13px;
+}

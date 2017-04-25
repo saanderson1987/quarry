@@ -61,12 +61,14 @@ class QuestionShow extends React.Component {
     if (this.state.editQuestionClicked === false) {
       return (
         <div>
-          <h3>{question.question}</h3>
-          <p>{question.details}</p>
-          <div>...</div>
-          <div className="dotMenu">
-            <span onClick={this.updateEditQuestionClicked(true)}>Edit (click me)</span>
-            <span onClick={this.deleteQuestion()}>Delete (click me)</span>
+          <h1>{question.question}</h1>
+          <p className="QuestionShowDetails">{question.details}</p>
+          <div className="Dots">
+            <div>...</div>
+            <div className="dotDropdown">
+              <button onClick={this.updateEditQuestionClicked(true)}>Edit (click me)</button>
+              <button onClick={this.deleteQuestion()}>Delete (click me)</button>
+            </div>
           </div>
         </div>
       );
@@ -97,8 +99,11 @@ class QuestionShow extends React.Component {
     }
 
     return (
-      <div>
-        <p>topics</p>
+      <div className="QuestionShow">
+        <ul className="QuestionShowTopics">
+          <li>Topic 1</li>
+          <li>Topic 2</li>
+        </ul>
         {this.questionBody()}
         <div>AnswerIndexContainer</div>
       </div>

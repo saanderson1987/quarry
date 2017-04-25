@@ -1,0 +1,14 @@
+
+TEXT:
+font-family: Helvetica, Arial, sans-serif;
+font-family: Georgia, Times, serif;
+
+h3: font-size: 15px;
+
+light-grey: #999;
+blue: #2b6dad;
+black: #333;
+
+
+
+border: 1px solid #e2e2e2;

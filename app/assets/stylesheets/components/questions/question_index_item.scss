@@ -1,0 +1,41 @@
+.QuestionItem {
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e2e2e2;
+    margin-top: 16px;
+}
+
+.QuestionItemTopics {
+  font-size: 13px;
+  color: #999;
+  font-family: Helvetica,Arial,sans-serif;
+  margin-bottom: 4px;
+}
+
+.QuestionItemQuestion {
+  font-family: Georgia, Times, serif;
+  font-size: 22px;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.QuestionItemQuestion:hover{
+  text-decoration: underline;
+}
+
+.QuestionItemAnswerUserPhoto {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.AnswerAuthorHeader {
+  display: flex;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.AnswerAuthorHeader:hover {
+  text-decoration: underline;
+}

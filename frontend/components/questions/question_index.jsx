@@ -35,17 +35,18 @@ class QuestionIndex extends React.Component {
         <div className="QuestionIndexFeeds">
           <h3>Feeds</h3>
           <ul>
-            <li>Top Stories</li>
-            <li>New Questions</li>
+            <li><a>Top Stories</a></li>
+            <li><a>New Questions</a></li>
           </ul>
         </div>
 
 
         <div className="QuestionIndexMain">
-          <h1>Top Stories For You</h1>
-          <div className="CreateQuestion">
-            <img className="UserPhoto"></img>
-            <span>{this.props.currentUser.username}</span>
+          <h3 className="QuestionIndexMainHeader">Top Stories For You</h3>
+          <div className="QuestionIndexFormNew">
+            <img className="QuestionIndexUserPhoto" src="https://qsf.ec.quoracdn.net/-3-images.new_grid.profile_pic_default_small.png-26-902da2b339fedf49.png"></img>
+            <a className= "QuestionIndexUserName">{this.props.currentUser.username}</a>
+            <br/>
             <NewQuestion
               createQuestion={this.props.createQuestion}
               currentUser={this.props.currentUser} />

@@ -1,0 +1,35 @@
+.QuestionShow {
+  width: 900px;
+  margin: auto;
+  padding-top: 30px;
+}
+
+.QuestionShowTopics {
+  display: flex;
+  margin-bottom: 8px;
+}
+
+.QuestionShowTopics li {
+  color: #808393;
+  background-color: #f4f4fa;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  margin-right: 4px;
+}
+
+.QuestionShow h1 {
+  font-size: 25px;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+.QuestionShowDetails {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 15px;
+}
+
+.Dots {
+  
+}

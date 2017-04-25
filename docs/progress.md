@@ -13,10 +13,9 @@ DONE    ### Phase 1: Backend setup and Front End User Authentication (2 days)
 
     **Objective:** Questions can be created, read, edited and destroyed through the API
 
-    /newly created question appears in feed.
-    -click question to go to show page.
-    -on show page, there is a button to get menu that offers option to edit or delete.
-    -nav bar
+
+    --Need dropdown menu to disappear when click off.
+    --Need icons on navbar
 
     --Change question id show page path from question.id to question name separated by '-'
     --Change 'Ask Question' button to 'Asking' upon submit ( see post_show and probably another) for hint

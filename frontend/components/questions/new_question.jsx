@@ -39,11 +39,11 @@ class NewQuestion extends React.Component {
   render() {
     if (this.state.newQuestionClicked === false) {
       return (
-        <span
-          className="newQuestionLink"
+        <a
+          className="NewQuestionLink"
           onClick={this.updateNewQuestionClicked(true)}>
-            What is your question? (click me)
-        </span>
+            What is your question?
+        </a>
       );
     } else {
       return(
