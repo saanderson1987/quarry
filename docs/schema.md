@@ -35,6 +35,7 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 answer       | string    | not null
+author_id    | integer   | not null
 question_id  | integer   | not null, foreign key (references questions), indexed
 
 ## comments
@@ -42,4 +43,5 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 comment       | string    | not null
+author_id    | integer   | not null
 answer_id  | integer   | not null, foreign key (references questions), indexed

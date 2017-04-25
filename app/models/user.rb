@@ -11,6 +11,16 @@ class User < ApplicationRecord
     foreign_key: :author_id,
     primary_key: :id
 
+  has_many :comments,
+    class_name: 'Comment',
+    foreign_key: :author_id,
+    primary_key: :id
+
+  has_many :answers,
+    class_name: 'Answer',
+    foreign_key: :author_id,
+    primary_key: :id
+
 	after_initialize :ensure_session_token
 	before_validation :ensure_session_token_uniqueness
 
