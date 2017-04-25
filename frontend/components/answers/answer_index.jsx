@@ -1,13 +1,33 @@
 import React from 'react';
-import QuestionIndexItem from './question_index_item';
-import NewQuestion from './new_question';
+import AnswerIndexItem from './answer_index_item';
 
-class QuestionIndex extends React.Component {
+class AnswerIndex extends React.Component {
+
+  componentDidMount() {
+    this.props.fetchAnswers();
+  }
 
   render() {
 
+    const questionId = this.props.questionId;
+    const answers = this.props.answers.map (answer => {
+      if (answer.question_id === questionId) {
+        return (
+          <AnswerIndexItem key={answer.id} answer={answer} />
+        );
+      }
+    });
 
+    return (
+      <div>
+        <ul>
+          {answers}
+        </ul>
+      </div>
 
+    );
   }
 
 }
+
+export default AnswerIndex;

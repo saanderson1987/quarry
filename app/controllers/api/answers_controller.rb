@@ -27,21 +27,23 @@ class Api::AnswersController < ApplicationController
       render json: @answer.errors.full_messages, status: 422
     end
 
-end
-
-def destroy
-  @answer = Question.find(params[:id])
-
-  if @answer.destroy
-    render :show
-  else
-    render json: @answer.errors.full_messages, status: 422
   end
 
-end
+  def destroy
+    @answer = Question.find(params[:id])
 
-private
+    if @answer.destroy
+      render :show
+    else
+      render json: @answer.errors.full_messages, status: 422
+    end
 
-def answer_params
-  params.require(:answer).permit(:text, :author_id, :question_id)
-end
+  end
+
+  private
+
+  def answer_params
+    params.require(:answer).permit(:text, :author_id, :question_id)
+  end
+
+end 

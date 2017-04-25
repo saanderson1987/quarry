@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
 import merge from 'lodash/merge';
+import AnswerIndexContainer from '../answers/answer_index_container.jsx'
+
 
 class QuestionShow extends React.Component {
 
@@ -56,7 +58,6 @@ class QuestionShow extends React.Component {
 
   questionBody() {
     const {question} = this.props;
-    // debugger;
 
     if (this.state.editQuestionClicked === false) {
       return (
@@ -105,7 +106,7 @@ class QuestionShow extends React.Component {
           <li>Topic 2</li>
         </ul>
         {this.questionBody()}
-        <div>AnswerIndexContainer</div>
+        <AnswerIndexContainer questionId={question.id}/>
       </div>
 
     );
