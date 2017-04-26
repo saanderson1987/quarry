@@ -102,15 +102,17 @@ class QuestionShow extends React.Component {
 
     return (
       <div className="QuestionShow">
-        <ul className="QuestionShowTopics">
-          <li>Topic 1</li>
-          <li>Topic 2</li>
-        </ul>
-        {this.questionBody()}
-        <NewAnswer
-          questionId={question.id}
-          createAnswer={this.props.createAnswer}
-          currentUser={this.props.currentUser} />
+        <div className="QuestionShowQuestion">
+          <ul className="QuestionShowTopics">
+            <li>Topic 1</li>
+            <li>Topic 2</li>
+          </ul>
+          {this.questionBody()}
+          <NewAnswer
+            questionId={question.id}
+            createAnswer={this.props.createAnswer}
+            currentUser={this.props.currentUser} />
+        </div>
         <AnswerIndexContainer questionId={question.id} />
       </div>
 

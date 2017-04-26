@@ -34,4 +34,7 @@ DONE    ### Phase 1: Backend setup and Front End User Authentication (2 days)
     **Objective:** Questions can be tagged with multiple tags
 
 
-//formatted relative from react-intl 
+//formatted relative from react-intl FOR TIME WRITTEN (ex added 20seconds ago)
+
+FOR CLICK OUTSIDE:
+https://github.com/Pomax/react-onclickoutside

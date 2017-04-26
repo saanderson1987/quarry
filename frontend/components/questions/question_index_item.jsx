@@ -45,7 +45,7 @@ class QuestionIndexItem extends React.Component {
         <Link to={`/questions/${question.id}`}>
           <h2 className="QuestionItemQuestion">{question.question}</h2>
         </Link>
-        <AnswerIndexItemContainer answerId={answer.id}/>
+        <ul><AnswerIndexItemContainer answerId={answer.id}/></ul>
     </li>
     );
   }

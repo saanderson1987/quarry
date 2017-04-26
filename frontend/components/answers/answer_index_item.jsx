@@ -46,8 +46,8 @@ class AnswerIndexItem extends React.Component {
     }
 
     return (
-      <li>
-        <div className="Answer">
+      <li className="Answer">
+        <div>
           <div className="AnswerAuthorHeader">
             <img className="QuestionItemAnswerUserPhoto" src="https://qsf.ec.quoracdn.net/-3-images.new_grid.profile_pic_default_small.png-26-902da2b339fedf49.png"></img>
             <a>{answer.author.username}</a>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router';
+import { Link, withRouter, hashHistory } from 'react-router';
 import merge from 'lodash/merge';
 
 class NewQuestion extends React.Component {
@@ -33,7 +33,13 @@ class NewQuestion extends React.Component {
   submitNewQuestion(e) {
     e.preventDefault();
     const question = this.state.question;
-    this.props.createQuestion(question);
+    this.props.createQuestion(question).then((newQuestion) => {
+      let newState = merge( {}, this.state,
+        { question: { question: "" }, newQuestionClicked: false }
+      );
+      this.setState(newState);
+      hashHistory.push(`/questions/${newQuestion.question.id}`);
+    });
   }
 
   render() {
