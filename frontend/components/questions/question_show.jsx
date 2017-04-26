@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
 import merge from 'lodash/merge';
-import AnswerIndexContainer from '../answers/answer_index_container.jsx'
+import AnswerIndexContainer from '../answers/answer_index_container.jsx';
+import NewAnswer from '../answers/new_answer';
 
 
 class QuestionShow extends React.Component {
@@ -106,7 +107,11 @@ class QuestionShow extends React.Component {
           <li>Topic 2</li>
         </ul>
         {this.questionBody()}
-        <AnswerIndexContainer questionId={question.id}/>
+        <NewAnswer
+          questionId={question.id}
+          createAnswer={this.props.createAnswer}
+          currentUser={this.props.currentUser} />
+        <AnswerIndexContainer questionId={question.id} />
       </div>
 
     );

@@ -4,6 +4,39 @@ import merge from 'lodash/merge';
 import CommentIndexContainer from '../comments/comment_index_container';
 class AnswerIndexItem extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.state = { commentsClicked: false };
+  }
+
+  componentDidMount(){
+    this.props.fetchAnswer(this.props.answered.id);
+  }
+
+  updateCommentsClicked() {
+    return(e) => {
+      let boolean;
+      if (this.state.commentsClicked === false) {
+        boolean = true;
+      } else {
+        boolean = false;
+      }
+      let newState = merge( {}, this.state,
+        { commentsClicked: boolean }
+      );
+      this.setState(newState);
+    };
+  }
+
+  comments(){
+    if (this.state.commentsClicked === false) {
+      return <div></div>;
+    } else {
+      return <CommentIndexContainer answerId={this.props.answer.id} />;
+    }
+
+  }
+
   render() {
     const answer = this.props.answer;
 
@@ -15,7 +48,8 @@ class AnswerIndexItem extends React.Component {
             <a>{answer.author.username}</a>
           </div>
           <div className="AnswerText">{answer.text}</div>
-          <CommentIndexContainer answerId={answer.id} />
+          <button onClick={this.updateCommentsClicked()}>Comments</button>
+          <div>{this.comments()}</div>
         </div>
       </li>
 
@@ -25,3 +59,6 @@ class AnswerIndexItem extends React.Component {
 }
 
 export default AnswerIndexItem;
+
+
+//SEE QUESTION INDEX ITEM CSS FILE FOR ANSWER AUTHOR HEADER STUFF

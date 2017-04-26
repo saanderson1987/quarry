@@ -2,6 +2,11 @@ import React from 'react';
 import CommentIndexItem from './comment_index_item';
 class CommentIndex extends React.Component {
 
+  constructor(props) {
+    super(props);
+
+  }
+
   componentDidMount() {
     this.props.fetchComments();
   }
@@ -12,7 +17,7 @@ class CommentIndex extends React.Component {
     const comments = this.props.comments.map (comment => {
       if (comment.answer_id === answerId) {
         return (
-          <CommentIndexItem key={comment.id} commentItem={comment} />
+          <CommentIndexItem key={comment.id} comment={comment} />
         );
       }
     });
@@ -23,11 +28,8 @@ class CommentIndex extends React.Component {
           {comments}
         </ul>
       </div>
-
     );
-
   }
-
 }
 
 export default CommentIndex;

@@ -1,5 +1,5 @@
-@answers.each do |answer|
-  json.set! answer.id do
-    json.extract! answer, :id, :text, :answer_id, :author_id
+@comments.each do |comment|
+  json.set! comment.id do
+    json.extract! comment, :id, :text, :answer_id, :author_id, :author, :answer
   end
 end

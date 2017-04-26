@@ -6,6 +6,7 @@ import {
   updateQuestion,
   deleteQuestion
 } from '../../actions/question_actions';
+import { createAnswer } from '../../actions/answer_actions';
 
 const mapStateToProps = (state, ownProps) => {
 
@@ -19,7 +20,8 @@ const mapDispatchToProps = dispatch => ({
   fetchQuestions: () => dispatch(fetchQuestions()),
   fetchQuestion: id => dispatch(fetchQuestion(id)),
   updateQuestion: question => dispatch(updateQuestion(question)),
-  deleteQuestion: id => dispatch(deleteQuestion(id))
+  deleteQuestion: id => dispatch(deleteQuestion(id)),
+  createAnswer: answer => dispatch(createAnswer(answer))
 });
 
 export default connect(

@@ -2,6 +2,7 @@ class Api::CommentsController < ApplicationController
 
   def index
     @comments = Comment.all
+  end
 
   def show
     @comment = Comment.find(params[:id])
@@ -34,8 +35,5 @@ class Api::CommentsController < ApplicationController
   def comment_params
     params.require(:comment).permit(:text, :answer_id, :author_id)
   end
-
-
-
 
 end

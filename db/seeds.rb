@@ -8,6 +8,15 @@
 #
 # More info here : http://www.xyzpub.com/en/ruby-on-rails/3.2/seed_rb.html
 
+User.create(
+  username: "user1",
+  password: "password"
+)
+
+User.create(
+  username: "user2",
+  password: "password"
+)
 Question.create(
   question: "Is this a test question?",
   details: "These are details",
@@ -18,4 +27,16 @@ Question.create(
   question: "Is this another test question?",
   details: "These are some more question details",
   author_id: 1
+)
+
+Answer.create(
+  author_id: 2,
+  text: "Yes, and this is a test answer.",
+  question_id: 1
+)
+
+Comment.create(
+  author_id: 2,
+  answer_id: 1,
+  text: "And this is a comment"
 )
