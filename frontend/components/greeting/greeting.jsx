@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
+import SearchContainer from '../search/search_container';
+
 
 class Greeting extends React.Component {
 
@@ -52,10 +54,7 @@ class Greeting extends React.Component {
         <nav>
           <div className="NavBegin">
         	  <a className="HomeLink" href='/'>Quarry</a>
-        	  <form>
-        	    <input className="AskOrSearch" type="text" placeholder="Ask or Search Quora"></input>
-        	    <input className="NavAskQuestionButton" type="submit" value="Ask Question" />
-        	  </form>
+        	  <SearchContainer/>
           </div>
           <div className="NavMiddle">
             <a>Read</a>
@@ -68,6 +67,7 @@ class Greeting extends React.Component {
       		  <div>{this.userDropDownMenu()}</div>
       		</div>
       	</nav>
+
       </div>
     );
   }

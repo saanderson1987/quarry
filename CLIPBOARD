@@ -1,1 +1,4 @@
-
+<form>
+  <input className="AskOrSearch" type="text" placeholder="Ask or Search Quora"></input>
+  <input className="NavAskQuestionButton" type="submit" value="Ask Question" />
+</form>

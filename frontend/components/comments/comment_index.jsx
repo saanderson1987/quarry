@@ -1,5 +1,8 @@
 import React from 'react';
 import CommentIndexItem from './comment_index_item';
+import NewComment from './new_comment.jsx';
+
+
 class CommentIndex extends React.Component {
 
   constructor(props) {
@@ -24,6 +27,10 @@ class CommentIndex extends React.Component {
 
     return (
       <div>
+        <NewComment
+          currentUser={this.props.currentUser}
+          answerId={this.props.answerId}
+          createComment={this.props.createComment}/>
         <ul>
           {comments}
         </ul>

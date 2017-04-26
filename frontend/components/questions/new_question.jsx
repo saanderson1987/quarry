@@ -54,7 +54,8 @@ class NewQuestion extends React.Component {
             <input
               type="text"
               placeholder="What is your question?"
-              onChange={this.updateQuestionField()}/>
+              onChange={this.updateQuestionField()}
+              value={this.state.question.question}/>
             <input type="submit" value="Ask Question" />
           </form>
         </div>

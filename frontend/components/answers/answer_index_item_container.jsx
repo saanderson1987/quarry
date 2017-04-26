@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import AnswerIndex from './answer_index';
+import AnswerIndexItem from './answer_index_item';
 import {
   fetchAnswer,
   deleteAnswer,
@@ -8,14 +8,14 @@ import {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    answer: state.answers[ownProps.answered.id]
+    answer: state.answers[ownProps.answerId]
   };
 
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchAnswer: (id) => dispatch(fetchAnswer()),
+    fetchAnswer: (id) => dispatch(fetchAnswer(id)),
     deleteAnswer: id => dispatch(deleteAnswer(id)),
     createAnswer: answer => dispatch(createAnswer(answer))
   };
@@ -24,4 +24,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(AnswerIndex);
+)(AnswerIndexItem);

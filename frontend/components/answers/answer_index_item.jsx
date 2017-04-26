@@ -9,9 +9,10 @@ class AnswerIndexItem extends React.Component {
     this.state = { commentsClicked: false };
   }
 
-  componentDidMount(){
-    this.props.fetchAnswer(this.props.answered.id);
-  }
+  // componentDidMount(){
+  //
+  //   this.props.fetchAnswer(this.props.answer.id);
+  // }
 
   updateCommentsClicked() {
     return(e) => {
@@ -39,6 +40,10 @@ class AnswerIndexItem extends React.Component {
 
   render() {
     const answer = this.props.answer;
+
+    if (!answer) {
+      return <div></div>;
+    }
 
     return (
       <li>

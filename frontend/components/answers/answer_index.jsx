@@ -1,5 +1,6 @@
 import React from 'react';
 import AnswerIndexItem from './answer_index_item';
+import AnswerIndexItemContainer from './answer_index_item_container';
 
 class AnswerIndex extends React.Component {
 
@@ -13,7 +14,7 @@ class AnswerIndex extends React.Component {
     const answers = this.props.answers.map (answer => {
       if (answer.question_id === questionId) {
         return (
-          <AnswerIndexItem key={answer.id} answer={answer} />
+          <AnswerIndexItemContainer key={answer.id} answerId={answer.id} />
         );
       }
     });
