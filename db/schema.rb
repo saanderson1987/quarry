@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170425142112) do
+ActiveRecord::Schema.define(version: 20170427142227) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,16 @@ ActiveRecord::Schema.define(version: 20170425142112) do
     t.index ["answer_id"], name: "index_comments_on_answer_id", using: :btree
   end
 
+  create_table "question_topic_links", force: :cascade do |t|
+    t.integer  "question_id"
+    t.integer  "topic_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["question_id", "topic_id"], name: "index_question_topic_links_on_question_id_and_topic_id", unique: true, using: :btree
+    t.index ["question_id"], name: "index_question_topic_links_on_question_id", using: :btree
+    t.index ["topic_id"], name: "index_question_topic_links_on_topic_id", using: :btree
+  end
+
   create_table "questions", force: :cascade do |t|
     t.string   "question",   null: false
     t.string   "details",    null: false
@@ -40,6 +50,13 @@ ActiveRecord::Schema.define(version: 20170425142112) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["author_id"], name: "index_questions_on_author_id", using: :btree
+  end
+
+  create_table "topics", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_topics_on_name", unique: true, using: :btree
   end
 
   create_table "users", force: :cascade do |t|

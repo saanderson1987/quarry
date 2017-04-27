@@ -5,9 +5,9 @@ import NewQuestion from './new_question';
 class QuestionIndex extends React.Component {
 
   componentDidMount() {
-
     this.props.fetchQuestions();
     this.props.fetchAnswers();
+    this.props.fetchTopics();
   }
 
   createTestQuestion() {
@@ -23,9 +23,9 @@ class QuestionIndex extends React.Component {
 
   render() {
 
-    const questions = this.props.questions.map( question => (
-      <QuestionIndexItem key={question.id} question={question} />
-    ));
+    const questions = this.props.questions.map( question => {
+      return <QuestionIndexItem key={question.id} question={question} />;
+    });
 
     if (this.props.currentUser === null) {
       return <div></div>;

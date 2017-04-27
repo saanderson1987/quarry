@@ -21,9 +21,10 @@ class NewAnswer extends React.Component {
     e.preventDefault();
     this.props.createAnswer(this.state.answer).then(() => {
       let newState = merge( {}, this.state,
-        { answer: { text: "" }, answerClicked: false }
+        { answer: { text: "" } }
       );
       this.setState(newState);
+      this.props.closeDropdown();
     });
   }
 

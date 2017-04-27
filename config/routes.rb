@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     resources :questions, except: [:new, :edit]
     resources :answers, except: [:new, :edit]
     resources :comments, except: [:new, :edit]
+    resources :topics, except: [:new, :edit]
+    resources :question_topic_links, except: [:new, :edit]
   end
 
   root "static_pages#root"

@@ -3,7 +3,7 @@ import { Link, hashHistory } from 'react-router';
 import merge from 'lodash/merge';
 import AnswerIndexContainer from '../answers/answer_index_container.jsx';
 import NewAnswer from '../answers/new_answer';
-
+import EditTopicsContainer from '../topics/edit_topics_container';
 
 class QuestionShow extends React.Component {
 
@@ -13,7 +13,8 @@ class QuestionShow extends React.Component {
       editQuestionClicked: false,
       question: this.props.question,
       answerClicked: false,
-      dotsClicked: false
+      dotsClicked: false,
+      editTopicsClicked: false
     };
     this.submitQuestionEdits = this.submitQuestionEdits.bind(this);
   }
@@ -34,15 +35,7 @@ class QuestionShow extends React.Component {
     };
   }
 
-  updateEditQuestionClicked(boolean) {
 
-    return e => {
-      let newState = merge( {}, this.state,
-        { editQuestionClicked: boolean }
-      );
-      this.setState(newState);
-    };
-  }
 
   submitQuestionEdits(e) {
     e.preventDefault();
@@ -83,12 +76,35 @@ class QuestionShow extends React.Component {
     };
   }
 
+  updateEditQuestionClicked(boolean) {
+
+    return e => {
+      let newState = merge( {}, this.state,
+        { editQuestionClicked: boolean }
+      );
+      this.setState(newState);
+    };
+  }
+
+  updateEditTopicsClicked(boolean) {
+
+    return e => {
+      let newState = merge( {}, this.state,
+        { editTopicsClicked: boolean }
+      );
+      this.setState(newState);
+    };
+  }
+
+
+
   dotsDropDown() {
     if (this.state.dotsClicked === true) {
       return (
         <div className="dotsDropdown">
           <ul>
-            <li><button onClick={this.updateEditQuestionClicked(true)}>Edit</button></li>
+            <li><button onClick={this.updateEditQuestionClicked(true)}>Edit Question & Details</button></li>
+            <li><a onClick={this.updateEditTopicsClicked(true)}>Edit Topics</a><EditTopicsContainer question={this.props.question} editTopicsClicked={this.state.editTopicsClicked}/></li>
             <li><button onClick={this.deleteQuestion()}>Delete</button></li>
           </ul>
         </div>
@@ -141,20 +157,25 @@ class QuestionShow extends React.Component {
       return <div>Loading...</div>;
     }
 
+    const topics = question.topics.map( topic => {
+      return <li key={topic.id}>{topic.name}</li>;
+    });
+
+
     return (
       <div className="QuestionShowContainer">
         <div className="QuestionShow">
           <div className="QuestionShowQuestion">
             <ul className="QuestionShowTopics">
-              <li>Topic 1</li>
-              <li>Topic 2</li>
+              {topics}
             </ul>
             {this.questionBody()}
             <NewAnswer
               questionId={question.id}
               createAnswer={this.props.createAnswer}
               currentUser={this.props.currentUser}
-              answerClicked={this.state.answerClicked}/>
+              answerClicked={this.state.answerClicked}
+              closeDropdown={this.updateAnswerClicked(false)}/>
           </div>
           <AnswerIndexContainer questionId={question.id} />
         </div>

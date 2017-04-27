@@ -17,16 +17,27 @@ User.create(
   username: "user2",
   password: "password"
 )
+
+Topic.create(
+  name: "Test Topic"
+)
+
+Topic.create(
+  name: "Another Test Topic"
+)
+
 Question.create(
   question: "Is this a test question?",
   details: "These are details",
-  author_id: 1
+  author_id: 1,
+  topic_ids: [1, 2]
 )
 
 Question.create(
   question: "Is this another test question?",
   details: "These are some more question details",
-  author_id: 1
+  author_id: 1,
+  topic_ids: [2]
 )
 
 Answer.create(

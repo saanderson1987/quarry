@@ -21,6 +21,11 @@ class Api::QuestionsController < ApplicationController
   def update
     @question = Question.find(params[:id])
 
+    # unless params[question][topic_ids].empty?
+    #   @question.topics += params[question][topic_ids]
+    #   @question.save
+    # end
+
     if @question.update(question_params)
       render :show
     else
@@ -43,7 +48,7 @@ class Api::QuestionsController < ApplicationController
   private
 
   def question_params
-    params.require(:question).permit(:question, :details, :author_id)
+    params.require(:question).permit(:question, :details, :author_id, topic_ids: [])
   end
 
 end

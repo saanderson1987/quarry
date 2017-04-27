@@ -38,3 +38,15 @@ DONE    ### Phase 1: Backend setup and Front End User Authentication (2 days)
 
 FOR CLICK OUTSIDE:
 https://github.com/Pomax/react-onclickoutside
+
+To do:
+
+- finish new answer form in show page
+- style new answer form on index page
+- add topics : create, edit topic, filter question index page
+- seed database
+- style search
+- get rid of 'read answer notifications' from navbar
+- rename greeting, make it nav
+- clear new answer form on submit
+- get better font !

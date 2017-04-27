@@ -23,13 +23,22 @@ class QuestionIndexItem extends React.Component {
 
   render() {
     const question = this.props.question;
-
+    const topics = question.topics.map( (topic, i) => {
+      if (i < question.topics.length -1) {
+        return <li key={topic.id}> {topic.name} ·&nbsp;</li>;
+      } else {
+        return <li key={topic.id}>{topic.name}</li>;
+      }
+    });
+    
     let answer = question.answers[this.state.index];
 
     if (!answer) {
       return (
         <li className="QuestionItem">
-          <div className="QuestionItemTopics">(Question Topics)</div>
+          <div className="QuestionItemTopics">
+            <ul>{topics}</ul>
+          </div>
           <Link to={`/questions/${question.id}`}>
             <h2 className="QuestionItemQuestion">{question.question}</h2>
           </Link>
@@ -41,7 +50,9 @@ class QuestionIndexItem extends React.Component {
 
     return (
       <li className="QuestionItem">
-        <div className="QuestionItemTopics">(Question Topics)</div>
+        <div className="QuestionItemTopics">
+          <ul>{topics}</ul>
+        </div>
         <Link to={`/questions/${question.id}`}>
           <h2 className="QuestionItemQuestion">{question.question}</h2>
         </Link>
