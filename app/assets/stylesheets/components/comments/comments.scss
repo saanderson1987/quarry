@@ -1,0 +1,59 @@
+.CommentsContainer {
+  background-color: #f6f6f6;
+  border: 1px solid #e2e2e2;
+  border-radius: 2px;
+  margin-top: 8px;
+  font-size: 15px;
+  font-family: Georgia, TimesNewRoman, serif;
+  padding: 16px;
+  border-radius: 3px;
+}
+
+.NewCommentForm {
+  display: flex;
+  // margin-bottom: 12px;
+}
+
+.CommentInput {
+  border: 1px solid #e2e2e2;
+  background-color: white;
+  padding: 4px 0px 4px 4px;
+  border-radius: 3px;
+  width: 448px;
+}
+
+.CommentUserPhoto {
+  height: 25px;
+  width: 25px;
+  margin-right: 8px;
+  border-radius: 50%;
+}
+
+.NewCommentButton {
+  background-color: #3e78ad;
+  color: #fff;
+  border: 1px solid #3a66ad;
+  padding: 3px 7px 4px 7px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  text-align: center;
+  font-size: 13px;
+  border-radius: 3px;
+  margin-left: 8px;
+}
+
+.CommentAuthorHeader {
+  margin-top: 12px;
+  display: flex;
+}
+
+.CommentUserName {
+  font-weight: bold;
+  padding-top: 3px;
+}
+
+.CommentText {
+  margin-left: 33px;
+  margin-top: 2px;
+
+}

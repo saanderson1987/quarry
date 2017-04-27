@@ -9,11 +9,6 @@ class AnswerIndexItem extends React.Component {
     this.state = { commentsClicked: false };
   }
 
-  // componentDidMount(){
-  //
-  //   this.props.fetchAnswer(this.props.answer.id);
-  // }
-
   updateCommentsClicked() {
     return(e) => {
       let boolean;
@@ -53,7 +48,7 @@ class AnswerIndexItem extends React.Component {
             <a>{answer.author.username}</a>
           </div>
           <div className="AnswerText">{answer.text}</div>
-          <button onClick={this.updateCommentsClicked()}>Comments</button>
+          <a className="CommentsLink" onClick={this.updateCommentsClicked()}>Comments</a>
           <div>{this.comments()}</div>
         </div>
       </li>

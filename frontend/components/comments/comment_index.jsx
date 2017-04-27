@@ -26,7 +26,7 @@ class CommentIndex extends React.Component {
     });
 
     return (
-      <div>
+      <div className="CommentsContainer">
         <NewComment
           currentUser={this.props.currentUser}
           answerId={this.props.answerId}

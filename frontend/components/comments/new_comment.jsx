@@ -39,13 +39,15 @@ class NewComment extends React.Component {
 
     return (
       <div>
-        <form onSubmit={this.submitNewComment}>
+        <form className= "NewCommentForm" onSubmit={this.submitNewComment}>
+          <img className="CommentUserPhoto" src="https://qsf.ec.quoracdn.net/-3-images.new_grid.profile_pic_default_small.png-26-902da2b339fedf49.png"></img>
           <input
+            className="CommentInput"
             type="text"
-            placeholder="Add a comment"
+            placeholder="Add a comment..."
             onChange={this.updateCommentField()}
             value={this.state.comment.text} />
-          <input type="submit" value="Comment button" />
+          <input className="NewCommentButton" type="submit" value="Comment" />
         </form>
       </div>
     );

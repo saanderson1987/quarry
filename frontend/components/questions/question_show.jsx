@@ -9,7 +9,12 @@ class QuestionShow extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { editQuestionClicked: false, question: this.props.question };
+    this.state = {
+      editQuestionClicked: false,
+      question: this.props.question,
+      answerClicked: false,
+      dotsClicked: false
+    };
     this.submitQuestionEdits = this.submitQuestionEdits.bind(this);
   }
 
@@ -57,6 +62,42 @@ class QuestionShow extends React.Component {
     };
   }
 
+  updateAnswerClicked(boolean) {
+    return e => {
+      let newState = merge( {}, this.state,
+        { answerClicked: boolean }
+      );
+      this.setState(newState);
+
+    };
+  }
+
+  updateDotsClicked() {
+    let boolean = this.state.dotsClicked === false ? true : false;
+    return e => {
+      let newState = merge( {}, this.state,
+        { dotsClicked: boolean }
+      );
+      this.setState(newState);
+
+    };
+  }
+
+  dotsDropDown() {
+    if (this.state.dotsClicked === true) {
+      return (
+        <div className="dotsDropdown">
+          <ul>
+            <li><button onClick={this.updateEditQuestionClicked(true)}>Edit</button></li>
+            <li><button onClick={this.deleteQuestion()}>Delete</button></li>
+          </ul>
+        </div>
+      );
+    } else {
+      return <div></div>;
+    }
+  }
+
   questionBody() {
     const {question} = this.props;
 
@@ -65,11 +106,11 @@ class QuestionShow extends React.Component {
         <div>
           <h1>{question.question}</h1>
           <p className="QuestionShowDetails">{question.details}</p>
-          <div className="Dots">
-            <div>...</div>
-            <div className="dotDropdown">
-              <button onClick={this.updateEditQuestionClicked(true)}>Edit (click me)</button>
-              <button onClick={this.deleteQuestion()}>Delete (click me)</button>
+          <div className="QuestionShowButtonLine">
+            <button className="NewAnswerButton" onClick={this.updateAnswerClicked(true)}>Answer</button>
+            <div className="DotsContainer">
+              <a className="DotsLink" onClick={this.updateDotsClicked()}><span className="Dots">...</span></a>
+              <div>{this.dotsDropDown()}</div>
             </div>
           </div>
         </div>
@@ -101,21 +142,24 @@ class QuestionShow extends React.Component {
     }
 
     return (
-      <div className="QuestionShow">
-        <div className="QuestionShowQuestion">
-          <ul className="QuestionShowTopics">
-            <li>Topic 1</li>
-            <li>Topic 2</li>
-          </ul>
-          {this.questionBody()}
-          <NewAnswer
-            questionId={question.id}
-            createAnswer={this.props.createAnswer}
-            currentUser={this.props.currentUser} />
+      <div className="QuestionShowContainer">
+        <div className="QuestionShow">
+          <div className="QuestionShowQuestion">
+            <ul className="QuestionShowTopics">
+              <li>Topic 1</li>
+              <li>Topic 2</li>
+            </ul>
+            {this.questionBody()}
+            <NewAnswer
+              questionId={question.id}
+              createAnswer={this.props.createAnswer}
+              currentUser={this.props.currentUser}
+              answerClicked={this.state.answerClicked}/>
+          </div>
+          <AnswerIndexContainer questionId={question.id} />
         </div>
-        <AnswerIndexContainer questionId={question.id} />
+        <div></div>
       </div>
-
     );
   }
 

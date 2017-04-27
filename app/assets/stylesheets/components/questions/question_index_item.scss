@@ -1,6 +1,6 @@
 .QuestionItem {
     padding-bottom: 16px;
-    border-bottom: 1px solid #e2e2e2;
+    // border-bottom: 1px solid #e2e2e2;
     margin-top: 16px;
 }
 
@@ -13,10 +13,10 @@
 
 .QuestionItemQuestion {
   font-family: Georgia, Times, serif;
-  font-size: 22px;
+  font-size: 24px;
   color: #333;
   font-weight: bold;
-  margin-bottom: 10px;
+  // margin-bottom: 10px;
 }
 
 .QuestionItemQuestion:hover{
@@ -28,14 +28,4 @@
   height: 40px;
   border-radius: 50%;
   margin-right: 8px;
-}
-
-.AnswerAuthorHeader {
-  display: flex;
-  font-size: 16px;
-  margin-bottom: 5px;
-}
-
-.AnswerAuthorHeader:hover {
-  text-decoration: underline;
 }

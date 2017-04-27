@@ -90,8 +90,6 @@ nav {
   padding-left: 10px;
 }
 
-
-
 .NavUserPhoto {
   height: 22px;
   width: 22px;
@@ -105,7 +103,7 @@ nav {
   border: 1px solid #e2e2e2;
   border-radius: 3px;
 
-  width: 186px;
+  width: 125px;
   right: 0;
 }
 
@@ -119,6 +117,10 @@ nav {
   padding: 8px 16px;
   border-bottom: 1px solid #e2e2e2;
 
+}
+
+.UserMenuMain li:hover {
+  background-color: #d2e9f3;
 }
 
 .UserMenuSub {

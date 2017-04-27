@@ -11,10 +11,8 @@ class NewAnswer extends React.Component {
         author_id: this.props.currentUser.id,
         question_id: this.props.questionId
       },
-      answerClicked: false
     };
     this.submitNewAnswer = this.submitNewAnswer.bind(this);
-
   }
 
 
@@ -38,8 +36,11 @@ class NewAnswer extends React.Component {
     };
   }
 
-  newAnswerForm() {
-    if (this.state.answerClicked === true) {
+
+
+
+  render() {
+    if (this.props.answerClicked === true) {
       return (
         <div className="NewAnswer">
           <div className="AnswerAuthorHeader">
@@ -59,27 +60,6 @@ class NewAnswer extends React.Component {
     } else {
       return <div></div>;
     }
-
-
-  }
-
-  updateAnswerClicked(boolean) {
-    return e => {
-      let newState = merge( {}, this.state,
-        { answerClicked: boolean }
-      );
-      this.setState(newState);
-
-    };
-  }
-
-  render() {
-    return (
-      <div>
-        <button className="NewAnswerButton" onClick={this.updateAnswerClicked(true)}>Answer</button>
-        {this.newAnswerForm()}
-      </div>
-    );
   }
 }
 
