@@ -16,4 +16,10 @@ class Answer < ApplicationRecord
     foreign_key: :author_id,
     primary_key: :id
 
+  # after_initialize :convert_line_breaks
+  #
+  # def convert_line_breaks
+  #   self.text = self.text.gsub(/[\n]+/, "<br>")
+  # end
+
 end

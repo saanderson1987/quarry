@@ -47,7 +47,8 @@ class AnswerIndexItem extends React.Component {
             <img className="QuestionItemAnswerUserPhoto" src="https://qsf.ec.quoracdn.net/-3-images.new_grid.profile_pic_default_small.png-26-902da2b339fedf49.png"></img>
             <a>{answer.author.username}</a>
           </div>
-          <div className="AnswerText">{answer.text}</div>
+          <div className="AnswerText"
+            dangerouslySetInnerHTML={ { __html: answer.text}}></div>
           <a className="CommentsLink" onClick={this.updateCommentsClicked()}>Comments</a>
           <div>{this.comments()}</div>
         </div>
