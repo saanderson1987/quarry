@@ -30,7 +30,7 @@ class Api::AnswersController < ApplicationController
   end
 
   def destroy
-    @answer = Question.find(params[:id])
+    @answer = Answer.find(params[:id])
 
     if @answer.destroy
       render :show
@@ -46,4 +46,4 @@ class Api::AnswersController < ApplicationController
     params.require(:answer).permit(:text, :author_id, :question_id)
   end
 
-end 
+end

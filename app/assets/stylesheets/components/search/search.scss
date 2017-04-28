@@ -1,5 +1,5 @@
 .SearchContainer {
-  position: relative;
+  // position: relative;
   font-family: Helvetica, Arial, sans-serif;
   font-size:15px;
 }
@@ -19,10 +19,16 @@
   transition: background-color 1s;
 }
 
+.SearchResulstsContaining {
+  position: relative;
+  width: 680px;
+  margin: auto;
+
+}
 .SearchResultsContainer {
   position: absolute;
   top: 10px;
-  left: 110px;
+  // left: 110px;
   border: 1px solid #e2e2e2;
   border-radius: 3px;
   width: 200px;

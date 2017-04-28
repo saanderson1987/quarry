@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
 import EditTopics from './edit_topics';
 import { fetchTopics } from '../../actions/topic_actions';
-import { createQuestionTopicLink } from '../../actions/question_topic_link_actions';
+import { createQuestionTopicLink, deleteQuestionTopicLink } from '../../actions/question_topic_link_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -14,7 +14,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
   return {
     fetchTopics: () => dispatch(fetchTopics()),
-    createQuestionTopicLink : questionTopicLink => dispatch(createQuestionTopicLink(questionTopicLink))
+    createQuestionTopicLink: questionTopicLink => dispatch(createQuestionTopicLink(questionTopicLink)),
+    deleteQuestionTopicLink: id => dispatch(deleteQuestionTopicLink(id))
   };
 };
 

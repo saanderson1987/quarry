@@ -1,8 +1,15 @@
 import React from 'react';
 import QuestionIndexItem from './question_index_item';
 import NewQuestion from './new_question';
+import merge from 'lodash/merge';
+
 
 class QuestionIndex extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = { feed: "all" };
+  }
 
   componentDidMount() {
     this.props.fetchQuestions();
@@ -21,14 +28,54 @@ class QuestionIndex extends React.Component {
     };
   }
 
+  feeds() {
+
+    return this.props.topics.map ( topic => {
+      let topicClass;
+      if (topic.name === this.state.feed) {
+        topicClass="SelectedTopic";
+      } else {
+        topicClass="UnselectedTopic";
+      }
+
+      return (
+        <li className={topicClass} key={topic.id}><a onClick={this.changeFeed(topic.name)}>{topic.name}</a></li>
+      );
+    });
+  }
+
+  changeFeed(feed) {
+    return e => {
+      let newState = merge( {}, this.state,
+        { feed: feed }
+      );
+      this.setState(newState);
+    };
+  }
+
   render() {
 
     const questions = this.props.questions.map( question => {
-      return <QuestionIndexItem key={question.id} question={question} />;
+      const questionTopics = Object.keys(question.topics).map(id => question.topics[id]);
+      const topicNames = questionTopics.map (topic => topic.name);
+
+      if (this.state.feed !== "all") {
+        if (topicNames.includes(this.state.feed)){
+          return <QuestionIndexItem key={question.id} question={question} />;
+        }
+      } else
+        return <QuestionIndexItem key={question.id} question={question} />;
     });
 
     if (this.props.currentUser === null) {
       return <div></div>;
+    }
+
+    let topStoriesClass;
+    if (this.state.feed === "all") {
+      topStoriesClass="SelectedTopic";
+    } else {
+      topStoriesClass="UnselectedTopic";
     }
 
     return (
@@ -36,8 +83,8 @@ class QuestionIndex extends React.Component {
         <div className="QuestionIndexFeeds">
           <h3>Feeds</h3>
           <ul>
-            <li><a>Top Stories</a></li>
-            <li><a>New Questions</a></li>
+            <li className={topStoriesClass} ><a onClick={this.changeFeed("all")}>Top Stories</a></li>
+            {this.feeds()}
           </ul>
         </div>
 

@@ -74,6 +74,7 @@
   font-size: 15px;
   border-radius: 3px;
   float: right;
+  margin-right: 20px;
 }
 
 .session-input {
@@ -84,6 +85,7 @@
   padding: 6px 8px;
   color: #333;
   font-size: 15px;
+  margin-top: 10px;
 }
 
 
@@ -109,4 +111,18 @@
   padding-left: 30px;
   width: 50%;
   box-sizing: border-box;
+}
+
+.Errors {
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  color: red;
+  text-align: center;
+  margin-top: 20px;
+
+}
+
+.GuestLogin {
+  margin-top: 9px;
+  margin-left: 80px;
 }

@@ -57,9 +57,10 @@ class EditTopics extends React.Component {
         );
         this.setState(newState);
       });
-      hashHistory.push(`/questions/${this.props.question.id}`)
+      hashHistory.push(`/questions/${this.props.question.id}`);
     };
   }
+
 
   results() {
     let results = this.matches().map((topic, i) => {

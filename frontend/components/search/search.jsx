@@ -77,8 +77,10 @@ class Search extends React.Component {
     } else {
       return (
         <div className="SearchResultsContainerBackdrop">
-          <div className="SearchResultsContainer">
-            <ul>{this.results()}</ul>
+          <div className="SearchResulstsContaining">
+            <div className="SearchResultsContainer">
+              <ul>{this.results()}</ul>
+            </div>
           </div>
         </div>
       );

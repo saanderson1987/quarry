@@ -26,6 +26,13 @@ class SessionForm1 extends React.Component {
 		this.props.login({user});
 	}
 
+  logInAsGuest() {
+		return e => {
+		  const user = { username: "Guest", password: "password"};
+		  this.props.login({user});
+    };
+	}
+
   update(field) {
 		return e => this.setState({
 			[field]: e.currentTarget.value
@@ -57,25 +64,29 @@ class SessionForm1 extends React.Component {
             <div className="form-right">
               <form onSubmit={this.submitLogin} >
                 <h3>Login</h3>
-                <label> Username:
+
                   <input type="text"
                     value={this.state.username}
                     onChange={this.update("username")}
-                    className="session-input" />
-                </label>
+                    className="session-input"
+                    placeholder="Username" />
+
                 <br/>
-                <label> Password:
                   <input type="password"
                     value={this.state.password}
                     onChange={this.update("password")}
-                    className="session-input" />
-                </label>
+                    className="session-input"
+                    placeholder="Password" />
+
                 <br/>
+                <button className="GuestLogin" onClick={this.logInAsGuest()} >Log in as Guest</button>
                 <input type="submit" value="Login" className="session-submit"/>
               </form>
             </div>
           </div>
-         {this.renderErrors()}
+          <div className="Errors">
+            {this.renderErrors()}
+          </div>
         </div>
       </div>
     );

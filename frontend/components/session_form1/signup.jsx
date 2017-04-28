@@ -59,19 +59,21 @@ class Signup extends React.Component {
         <div className="form-left">
           <form onSubmit={this.submitSignup} >
             <h3>Sign Up</h3>
-            <label> Username:
+          
               <input type="text"
                 value={this.state.creds.username}
                 onChange={this.update("username")}
-                className="session-input" />
-            </label>
+                className="session-input"
+                placeholder="Username" />
+
             <br/>
-            <label> Password:
+
               <input type="password"
                 value={this.state.creds.password}
                 onChange={this.update("password")}
-                className="session-input" />
-            </label>
+                className="session-input"
+                placeholder="Password" />
+
             <br/>
             <input type="submit" value="Sign Up" className="session-submit"/>
 

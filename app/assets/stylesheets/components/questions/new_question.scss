@@ -25,14 +25,20 @@
   transition: background-color 1s;
 }
 
+// .NewQuestionContaining {
+//   width: 900px;
+//   margin: auto;
+// }
+
 .NewQuestionBox {
   background-color: white;
-  width: 80%;
+  width: 65%;
+  max-width: 500px;
   height: auto;
   border: 1px solid #e2e2e2 ;
   border-radius: 3px;
   margin: 0 auto;
-  margin-top: 33%;
+  margin-top: 10%;
 
 }
 
