@@ -25,15 +25,34 @@
 }
 
 .NewAnswerForm {
-  // display: flex;
-  // flex-direction: column;
-  display: block;
+  display: flex;
+  flex-direction: column;
+
 
 }
 .NewAnswerText {
   margin: 16px;
   height: 100px;
+  width: 95%
 
+}
+
+.SubmitNewAnswerButton {
+  padding: 6px 8px;
+  color: #fff;
+  background-color: #3e78ad;
+  border: 1px solid #3a66ad;
+  border-radius: 3px;
+}
+
+.NewAnswerButtonBar {
+  background-color: #f6f6f6;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  color: #999;
 }
 
 .NewAnswerButton {

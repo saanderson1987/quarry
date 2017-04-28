@@ -76,31 +76,56 @@ class EditTopics extends React.Component {
     return results;
   }
 
+  renderResults() {
+    if (this.state.topicsField === "") {
+      return <div></div>;
+    } else {
+      return (
+        <div className="SelectTopicContainer">
+          <ul>{this.results()}</ul>
+        </div>
+      );
+    }
+  }
+
+  closeEditTopics() {
+    return (e) => {
+      this.props.closeEditTopics();
+    };
+  }
+
   render() {
     const question = this.props.question;
     const currentTopics = question.topics.map( (topic) => {
-      return <li key={topic.id}>{topic.name}</li>;
+      return <li className="CurrentTopic" key={topic.id}><span >{topic.name}</span></li>;
     });
 
     if (this.props.editTopicsClicked === false) {
       return <div></div>;
     } else {
       return (
-        <div>
-          <h3>Edit Topics</h3>
-          <p>Topics are used to find the best experts to answer the question.</p>
+        <div className="EditTopicsContainer">
+          <div className="EditTopicsBox">
+            <div className="EditTopicsHeader">
+              <h3>Edit Topics</h3>
+              <p>Topics are used to find the best experts to answer the question.</p>
+            </div>
           <form>
-            <input
-            type="text"
-            onChange={this.updateTopicsField()}
-            value={this.state.topicsField}
-            placeholder="Select Topic" />
-          </form>
-          <ul>{this.results()}</ul>
-          <div>
-            <ul>
-              {currentTopics}
-            </ul>
+              <input
+              type="text"
+              onChange={this.updateTopicsField()}
+              value={this.state.topicsField}
+              placeholder="Select Topic" />
+            </form>
+            <div>{this.renderResults()}</div>
+            <div>
+              <ul>
+                {currentTopics}
+              </ul>
+            </div>
+            <div className="EditTopicsButtonBar">
+              <button className="CloseEditTopicsButton" onClick={this.closeEditTopics()}>Done</button>
+            </div>
           </div>
         </div>
       );

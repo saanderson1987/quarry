@@ -7,7 +7,7 @@ class Search extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { searchField: "" };
+    this.state = { searchField: ""};
   }
 
   componentDidMount() {
@@ -66,26 +66,40 @@ class Search extends React.Component {
         <li key={i}><a onClick={this.redirectToQuestion(question.id)}>{question.question}</a></li>
       );
     });
+
+
     return results;
   }
 
+  renderResults() {
+    if (this.state.searchField === "") {
+      return <div></div>;
+    } else {
+      return (
+        <div className="SearchResultsContainerBackdrop">
+          <div className="SearchResultsContainer">
+            <ul>{this.results()}</ul>
+          </div>
+        </div>
+      );
+    }
+  }
 
   render() {
     return (
-      <div>
+      <div className="SearchContainer">
         <form>
           <input
-          className = "AskOrSearch"
+          className ="AskOrSearch"
           type="text"
           onChange={this.updateSearchField()}
           value={this.state.searchField}
-          placeholder="Ask or Search Quora" />
+          placeholder="Search Quora" />
           <button className="NavAskQuestionButton" type="submit" >
-            Ask Question
+            Search Questions
           </button>
         </form>
-        <ul>{this.results()}</ul>
-
+        <div>{this.renderResults()}</div>
       </div>
     );
   }

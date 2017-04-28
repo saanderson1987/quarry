@@ -101,12 +101,15 @@ class QuestionShow extends React.Component {
   dotsDropDown() {
     if (this.state.dotsClicked === true) {
       return (
+        <div>
         <div className="dotsDropdown">
           <ul>
             <li><button onClick={this.updateEditQuestionClicked(true)}>Edit Question & Details</button></li>
-            <li><a onClick={this.updateEditTopicsClicked(true)}>Edit Topics</a><EditTopicsContainer question={this.props.question} editTopicsClicked={this.state.editTopicsClicked}/></li>
+            <li><a onClick={this.updateEditTopicsClicked(true)}>Edit Topics</a></li>
             <li><button onClick={this.deleteQuestion()}>Delete</button></li>
           </ul>
+        </div>
+        <EditTopicsContainer question={this.props.question} closeEditTopics={this.updateEditTopicsClicked(false)} editTopicsClicked={this.state.editTopicsClicked}/>
         </div>
       );
     } else {

@@ -1,0 +1,108 @@
+.EditTopicsContainer {
+  display: block;
+  position: fixed;
+  box-sizing: border-box;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  background-color: rgba(43, 48, 56, 0.58);
+
+  z-index: 10;
+  transition: background-color 1s;
+}
+
+.EditTopicsBox {
+  background-color: #fff;
+  width: 80%;
+  height: auto;
+  border: 1px solid #e2e2e2 ;
+  border-radius: 3px;
+  margin: 0 auto;
+  margin-top: 33%;
+
+}
+
+.EditTopicsHeader {
+  border-bottom: 1px solid #e2e2e2;
+  padding: 18px;
+}
+
+.EditTopicsBox h3 {
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+  padding-bottom: 6px;
+}
+
+.EditTopicsBox p {
+  font-size: 15px;
+  color: #999;
+}
+
+.EditTopicsBox form {
+  margin: 16px 16px 0px;
+  position: relative;
+
+}
+
+.EditTopicsBox input {
+  font-size: 13px;
+  border: 1px solid #e2e2e2;
+  padding: 5px;
+  border-radius: 3px;
+  width: 100%;
+}
+
+.CurrentTopic {
+  margin: 16px
+}
+
+
+
+.CurrentTopic span {
+  background-color: #f4f4fa;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 13px;
+  color: #808393;
+}
+
+.EditTopicsButtonBar {
+  background-color: #f6f6f6;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  color: #999;
+}
+
+.CloseEditTopicsButton {
+  padding: 6px 8px;
+  color: #fff;
+  background-color: #3e78ad;
+  border: 1px solid #3a66ad;
+  border-radius: 3px;
+}
+
+.SelectTopicContainer {
+  position: absolute;
+  background-color: #fff;
+  border-left: 1px solid #e2e2e2;
+  border-right: 1px solid #e2e2e2;
+  font-size: 13px;
+  margin-left: 16px;
+  width: 400px;
+  box-shadow: 1px 1px 1px grey;
+}
+
+.SelectTopicContainer li {
+  border-bottom: 1px solid #e2e2e2;
+  padding: 8px;
+}
+
+.SelectTopicContainer li:hover {
+  color: #2b6dad;
+}

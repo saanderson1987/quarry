@@ -48,14 +48,14 @@ class NewAnswer extends React.Component {
             <img className="QuestionItemAnswerUserPhoto" src="https://qsf.ec.quoracdn.net/-3-images.new_grid.profile_pic_default_small.png-26-902da2b339fedf49.png"></img>
             <a className="NewAnswerUserName">{this.props.currentUser.username}</a>
           </div>
-          <form className="NewAnswerForm" onSubmit={this.submitNewAnswer}>
-            <textarea
-              className="NewAnswerText"
-              placeholder="Write your answer"
-              onChange={this.updateAnswerField()}
-              value={this.state.answer.text}/>
-            <input className="NewAnswerButton" type="submit" value="Submit" />
-          </form>
+          <textarea
+            className="NewAnswerText"
+            placeholder="Write your answer"
+            onChange={this.updateAnswerField()}
+            value={this.state.answer.text}/>
+          <div className="NewAnswerButtonBar">
+            <button className="SubmitNewAnswerButton" onClick={this.submitNewAnswer}>Submit</button>
+          </div>
         </div>
       );
     } else {
