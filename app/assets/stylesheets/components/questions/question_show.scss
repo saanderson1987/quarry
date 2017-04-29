@@ -105,3 +105,53 @@
 .dotsDropdown li:hover {
   background-color: #d2e9f3;
 }
+
+.EditQuestion {
+  border: 1px solid #e2e2e2;
+  border-radius: 2px;
+  // margin-top: 8px;
+  font-size: 17px;
+  font-family: Georgia, TimesNewRoman, serif;
+  border-radius: 3px;
+}
+
+.EditQuestionTitle {
+  border-bottom: 1px solid #e2e2e2;
+  display: block;
+  width: 589px;
+  margin: 0px;
+  font-size: 27px;
+  font-weight: bold;
+  padding: 6px;
+}
+
+.EditQuestionDetails {
+  display:block;
+  width: 576px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  padding: 12px;
+}
+
+.EditQuestionButtonBar {
+  background-color: #f6f6f6;
+  padding: 7px;
+  display: flex;
+  justify-content: flex-end;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  color: #999;
+}
+
+.EditQuestionSubmit {
+  padding: 6px 8px;
+  color: #fff;
+  background-color: #3e78ad;
+  border: 1px solid #3a66ad;
+  border-radius: 3px;
+  margin-left: 10px;
+}
+
+.CancelButton:hover {
+  text-decoration: underline;
+}

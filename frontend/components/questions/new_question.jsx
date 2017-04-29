@@ -66,7 +66,7 @@ class NewQuestion extends React.Component {
                   value={this.state.question.question}/>
               </div>
               <div className="NewQuestionButtonBar">
-                <button onClick={this.updateNewQuestionClicked(false)}>Cancel</button>
+                <button className="CancelButton" onClick={this.updateNewQuestionClicked(false)}>Cancel</button>
                 <button className="NewQuestionButton" onClick={this.submitNewQuestion}>Ask Question</button>
               </div>
             </div>

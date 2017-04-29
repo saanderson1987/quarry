@@ -136,18 +136,21 @@ class QuestionShow extends React.Component {
       );
     } else {
       return (
-        <div>
-          <form onSubmit={this.submitQuestionEdits}>
+        <div className="EditQuestion">
             <input
+              className="EditQuestionTitle"
               type="text"
               value={this.state.question.question}
               onChange={this.update('question')} />
             <textarea
+              className="EditQuestionDetails"
               value={this.state.question.details}
-              onChange={this.update('details')} />
-            <span onClick={this.updateEditQuestionClicked(false)} >Cancel (click me)</span>
-            <input type="submit" value="Update" />
-          </form>
+              onChange={this.update('details')}
+              placeholder= "Enter question details.." />
+            <div className="EditQuestionButtonBar">
+              <button className="CancelButton" onClick={this.updateEditQuestionClicked(false)} >Cancel</button>
+              <button className="EditQuestionSubmit" onClick={this.submitQuestionEdits}>Update</button>
+            </div>
         </div>
       );
     }
