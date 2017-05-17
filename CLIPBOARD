@@ -1,13 +1,4 @@
-<div className="EditQuestion">
-  <form onSubmit={this.submitQuestionEdits}>
-    <input
-      type="text"
-      value={this.state.question.question}
-      onChange={this.update('question')} />
-    <textarea
-      value={this.state.question.details}
-      onChange={this.update('details')} />
-    <span onClick={this.updateEditQuestionClicked(false)} >Cancel (click me)</span>
-    <input type="submit" value="Update" />
-  </form>
-</div>
+in answerIndexItem
+
+<div className="AnswerText"
+  dangerouslySetInnerHTML={ { __html: answer.text}}></div>
