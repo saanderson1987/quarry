@@ -14,7 +14,6 @@ class Search extends React.Component {
     if (!this.props.questions) {
       this.props.fetchQuestions();
     }
-    // this.props.fetchQuestions();
   }
 
   updateSearchField() {
