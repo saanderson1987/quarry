@@ -27,16 +27,8 @@ class Search extends React.Component {
 
   matches() {
     const matches = [];
-    // const questions = this.props.questions.map((question) => question.question);
-    // if (this.state.searchField) {
-    //   questions.forEach( question => {
-    //     if (question.toLowerCase().includes(this.state.searchField.toLowerCase())) {
-    //       matches.push(question);
-    //     }
-    //   });
-    // }
-
     const questions = this.props.questions;
+
     if (this.state.searchField) {
       questions.forEach( question => {
         if (question.question.toLowerCase().includes(this.state.searchField.toLowerCase())) {
