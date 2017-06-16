@@ -1,24 +1,7 @@
-# README
+# Quarry
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Live site](http://the-quarry.herokuapp.com)
 
-Things you may want to cover:
+Quarry is a full-stack web application inspired by Quora.com, a site where users can post questions and answer any question posted. On the backend, it uses Ruby on Rails and a PostgreSQL database, and on the front end, React with Redux.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+ 
