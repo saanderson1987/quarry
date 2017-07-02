@@ -28,7 +28,8 @@ class SessionForm1 extends React.Component {
 
   logInAsGuest() {
 		return e => {
-		  const user = { username: "Guest", password: "password"};
+      e.preventDefault();
+      const user = { username: "Guest", password: "password"};
 		  this.props.login({user});
     };
 	}
