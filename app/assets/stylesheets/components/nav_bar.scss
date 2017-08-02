@@ -34,7 +34,7 @@ nav {
   margin: 9px 0px 0px 20px;
   color: #333;
   font-size: 15px;
-  font-family: Helvetica,Arial,sans-serif;
+  font-family: $sans-serif;
   font-weight: lighter;
   width: 266px;
 
@@ -42,7 +42,7 @@ nav {
 
 .NavAskQuestionButton {
   font-size: 13px;
-  font-family: Helvetica,Arial,sans-serif;
+  font-family: $sans-serif;
   border: 1px solid #ced1e1;
   padding: 6px 8px 4px 8px;
   color: #585a61;
@@ -54,7 +54,7 @@ nav {
 
 .NavMiddle {
   font-size: 14px;
-  font-family: Helvetica,Arial,sans-serif;
+  font-family: $sans-serif;
   color: #999;
   display: flex;
   justify-content: space-between;
@@ -71,7 +71,7 @@ nav {
 .NavEnd {
   display: flex;
   align-items: center;
-  font-family: Helvetica,Arial,sans-serif;
+  font-family: $sans-serif;
   padding: 0px 13px 0px 13px;
   position: relative;
 }

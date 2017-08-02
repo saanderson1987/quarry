@@ -1,6 +1,6 @@
 
 TEXT:
-font-family: Helvetica, Arial, sans-serif;
+font-family: $sans-serif;
 font-family: 'Arbutus Slab', Georgia, serif;
 
 

@@ -23,7 +23,6 @@ const Root = ({ store }) => {
     }
   };
 
-
   return (
     <Provider store={store}>
       <Router history={hashHistory}>
