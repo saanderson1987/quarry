@@ -65,8 +65,9 @@ nav {
 }
 
 .NavMiddle a:hover {
-  background-color: #f4f4f4;
-
+  // below is set for if the read/answer/notifications options are implemented
+  // background-color: #f4f4f4;
+  cursor: default;
 }
 .NavEnd {
   display: flex;

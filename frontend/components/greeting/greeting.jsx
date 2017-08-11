@@ -50,9 +50,10 @@ class Greeting extends React.Component {
         	  <SearchContainer/>
           </div>
           <div className="NavMiddle">
-            <a>Read</a>
-            <a>Answer</a>
-            <a>Notifications</a>
+            {/* below is set for if the read/answer/notifications options are implemented */}
+            <a></a>
+            <a></a>
+            <a></a>
           </div>
       		<div onClick={this.clickUserDropDownMenu()} className="NavEnd">
       			<img className="NavUserPhoto" src="https://qsf.ec.quoracdn.net/-3-images.new_grid.profile_pic_default_small.png-26-902da2b339fedf49.png"></img>
