@@ -36,6 +36,33 @@ By declaring the format as JSON on the routes, Rails automatically looks for a `
 end
 ```
 
-The front end is structured into React components that receive data through the Redux data architecture. The data goes through a specific cycle, which I will outline here.
+### Redux Data Architecture
 
-The data is first received from the back end by using AJAX functions. These AJAX functions are grouped in files based on database table and stored in the folder `util/`.
+The front end is structured into React components that receive data through the Redux data architecture.
+
+Application data is managed in an object tree called the store, which represents an immutable, single source of truth. To update the store, there are a series of steps.
+
+The data is retrieved from the back end through AJAX functions. These AJAX functions are grouped in files based on database table and stored in the folder `util/`.
+
+Another set of functions call the AJAX functions and in the promise they return, invoke the function `dispatch`, which updates the store with the new data. The `dispatch` function is called with an argument known as an *action*. An action is a function that takes in the data returned in an AJAX promise and returns an object containing both that data and an attribute named `type`. Setting the `type` allows the `dispatch` function to appropriately process the data and update the store. The following displays the operation I've described:
+
+```javascript
+export const createAnswer = answer => dispatch => {
+  return AnswerApiUtil.createAnswer(answer).then(newAnswer => dispatch(receiveAnswer(newAnswer)));
+};
+
+const receiveAnswer = answer => ({
+  type: RECEIVE_ANSWER,
+  answer
+});
+```
+
+In order for `dispatch` to update the store, it relies on functions called reducers to process the data. Depending on the action `type`, the reducer will perform a different operation. In all cases, the reducer merges the previous state with the new data and returns the new state. The store is then set to the new state. To perform the merge operation, the reducers employ the Lodash function `merge`, which makes a deep copy of the objects, which is necessary when the objects have multiple layers.
+
+### React components
+
+Topics to cover:
+-Use of React-Router
+-Session log in
+-Component organization
+-Feature highlights
