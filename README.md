@@ -59,10 +59,13 @@ const receiveAnswer = answer => ({
 
 In order for `dispatch` to update the store, it relies on functions called reducers to process the data. Depending on the action `type`, the reducer will perform a different operation. In all cases, the reducer merges the previous state with the new data and returns the new state. The store is then set to the new state. To perform the merge operation, the reducers employ the Lodash function `merge`, which makes a deep copy of the objects, which is necessary when the objects have multiple layers.
 
-### React components
+###Root component
 
-Topics to cover:
--Use of React-Router
--Session log in
+The `<Root>` component is the first component rendered when the site is loaded. It sets the routes and handles the session authentication logic. While the api routes are configured using Rails and allow for data operations, the front end routes are established with the package `react-router` and enable the user to navigate this single-page application as if it had multiple pages. This makes it easier to navigate the UI and bookmark different views of the application. I didn't find it necessary to provide for extensive routes in the application. The `<IndexRoute>` renders the `<QuestionIndexContainer>` component, which displays the user question feed. There is also a route which renders `<QuestionShowContainer>` based on the id of the question and another that displays the login page.
+
+In addition to setting the routes, the `<Root>` component manages user log-in. It makes use of `react-router`'s `onEnter` event callback by passing a function that checks to see if there is a `currentUser`in the store. If not, it redirects the route to `/session`, which renders the log in and sign up forms.
+
+
+More topics to cover:
 -Component organization
 -Feature highlights
