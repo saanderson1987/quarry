@@ -65,6 +65,15 @@ The `<Root>` component is the first component rendered when the site is loaded. 
 
 In addition to setting the routes, the `<Root>` component manages user log-in. It makes use of `react-router`'s `onEnter` event callback by passing a function that checks to see if there is a `currentUser`in the store. If not, it redirects the route to `/session`, which renders the log in and sign up forms.
 
+```javascript
+const _ensureLoggedIn = (nextState, replace) => {
+  const currentUser = store.getState().session.currentUser;
+  if (!currentUser) {
+    replace('/session');
+  }
+};
+```
+
 
 More topics to cover:
 -Component organization
